@@ -11,33 +11,9 @@
     title="Simple">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
+  <link rel="stylesheet" type="text/css" href="css/myStyle.css"/>
+
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"> -->
-
-  <style>
-    :root {
-
-      --theme-hue: random(0, 255);
-      --cover-button-border: 1px solid black;
-      --cover-button-color: black;
-      --cover-button-primary-color: rgb(255, 255, 255);
-      --cover-button-primary-background: black;
-      --cover-heading-color: black;
-    }
-
-    .cover .cover-main>p:last-child a:hover {
-      color: #ffff;
-      background: hsla(0, 0%, 37%, 0.387);
-    }
-
-    .cover h1 span {
-      font-weight: bold;
-    }
-
-    .cover .cover-main>p:last-child a:first-child:hover {
-      color: black;
-      background: hsla(0, 0%, 0%, 0.387);
-    }
-  </style>
   </style>
 
 </head>
@@ -46,6 +22,7 @@
 
 
   <div id="app"></div>
+  <a class="to-top"><img width=10% align="right" src="image/top_rocket.png" alt=""></a>
 
   <script>
     window.$docsify = {
@@ -108,6 +85,13 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-sql.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-matlab.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-cpp.js"></script>
+
+  <!-- 置顶插件 -->
+  <script src="script/jquery.js"></script>
+  <script src="script/top.js"></script>
+  <script>
+    $('.to-top').toTop();
+  </script>
 
 </body>
 
