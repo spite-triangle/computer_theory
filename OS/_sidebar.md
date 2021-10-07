@@ -1,7 +1,7 @@
 
 <hr style="margin: 5px 0;">
 
-- [主页](/README.md)
+- [首页](/README.md)
 
 <hr style="margin: 5px 0;">
 

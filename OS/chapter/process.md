@@ -2,14 +2,14 @@
 
 # 进程的描述
 
-<p style="text-align:center;"><img src="../../image/os/summary7.png" align="middle" /></p>
+![img](../../image/os/summary7.png)
 
 ## 定义
 
 **作用**：对于「多道批处理系统」，在内存中加载了多道程序的数据段与代码段，为了方便操作系统对这些内存中的运行程序进行管理，引入的「进程」、「进程实体」的概念。
 
 
-<p style="text-align:center;"><img src="../../image/os/processEntity.png" align="middle" /></p>
+![img](../../image/os/processEntity.png)
 
 
 **进程实体**；进程在物理上，实实在在的体现。
@@ -47,19 +47,19 @@ struct task_struct {
 };
 ```
 
-<p style="text-align:center;"><img src="../../image/os/pcb.png" align="middle" /></p>
+![img](../../image/os/pcb.png)
 
 
 ## 进程的组织
 
 <span style="font-size:24px;font-weight:bold" class="section2">1. 链接方式</span>
 
-<p style="text-align:center;"><img src="../../image/os/process_link.png" align="middle" /></p>
+![img](../../image/os/process_link.png)
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 索引方式</span>
 
-<p style="text-align:center;"><img src="../../image/os/process_index.png" align="middle" /></p>
+![img](../../image/os/process_index.png)
 
 ## 进程特性
 
-<p style="text-align:center;"><img src="../../image/os/procee_feature.png" align="middle" /></p>
+![img](../../image/os/procee_feature.png)

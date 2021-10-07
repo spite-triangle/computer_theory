@@ -2,11 +2,11 @@
 
 # 1. 概念与功能
 
-<p style="text-align:center;"><img src="../../image/os/summary1.png" align="middle" /></p>
+![img](../../image/os/summary1.png)
 
 ## 1.1. 概念
 
-<p style="text-align:center;"><img src="../../image/os/systemStructure.png" align="middle" /></p>
+![img](../../image/os/systemStructure.png)
 
 - **中间**：管理协调计算机硬件、软件的资源分配工作
 - **对上**：为用户、应用程序提供简单操作的服务
@@ -47,7 +47,7 @@
 
 # 2. 操作系统的特征
 
-<p style="text-align:center;"><img src="../../image/os/summary2.png" align="middle" /></p>
+![img](../../image/os/summary2.png)
 
 ## 2.1. 并发
 
@@ -87,11 +87,11 @@
 
 # 3. 操作系统的发展
 
-<p style="text-align:center;"><img src="../../image/os/summary3.png" align="middle" /></p>
+![img](../../image/os/summary3.png)
 
 ## 3.1. 手工操作
 
-<p style="text-align:center;"><img src="../../image/os/manual.png" align="middle" /></p>
+![img](../../image/os/manual.png)
 
 **运行流程**：
 1. 用户通过纸带机将二进制程序输入
@@ -107,7 +107,7 @@
 
 ### 3.2.1. 单道批处理系统
 
-<p style="text-align:center;"><img src="../../image/os/SinglechannelBatch%20.png" align="middle" /></p>
+![img](../../image/os/SinglechannelBatch%20.png)
 
 
 **改进上一代问题：** 
@@ -129,7 +129,7 @@
 > [!tip]
 > **内存中加载了多道程序，具有多进程处理功能，能实现「并发」**，当正在运行的的那道程序因为某种原因（比如，等待输出或输出数据）而暂时无法继续运行的时候，系统将自动地启动另一道程序运行。
 
-<p style="text-align:center;"><img src="../../image/os/multichannelBatch%20.png" align="middle" /></p>
+![img](../../image/os/multichannelBatch%20.png)
 
 
 **改进上一代问题：** 
@@ -145,11 +145,11 @@
 **问题**：计算对磁带中的三个任务进行处理，一个程序的主要执行步骤：读、执行、写
 
 
-<p style="text-align:center;"><img src="../../image/os/exampleSinglechannelBatch%20.png" align="middle" /></p>
+![img](../../image/os/exampleSinglechannelBatch%20.png)
 
 **单道批处理系统：** 串行执行程序，一个程序执行完，才开始下一个。
 
-<p style="text-align:center;"><img src="../../image/os/exampleMultichannelBatch%20.png" align="middle" /></p>
+![img](../../image/os/exampleMultichannelBatch%20.png)
 
 **多道批处理系统：** 一个完整任务进行拆分：读，执行，写，一个芯片专门读，`CPU`专门计算，一个芯片专门写，然后三个芯片进行流水线作业。当进行`I/O`操作时，进程被挂起，`CPU`会处理其他进程；
 
@@ -170,15 +170,15 @@
 
 # 4. 运行机制与体系结构
 
-<p style="text-align:center;"><img src="../../image/os/summary4.png" align="middle" /></p>
+![img](../../image/os/summary4.png)
 
 ## 4.1. 指令
 
-<p style="text-align:center;"><img src="../../image/os/simpleCalculator.jpg" align="middle" /></p>
+![img](../../image/os/simpleCalculator.jpg)
 
 当使用涉及一个寄存器的计算器时，可以通过定义不同操作的开关来完成计算，例如，加一个开关，减一个开关。
 
-<p style="text-align:center;"><img src="../../image/os/calculator.jpg" align="middle" /></p>
+![img](../../image/os/calculator.jpg)
 
 **概念**：当涉及多个寄存器进行计算时，每个操作设置一个开关就会很丧心病狂，所以就可以对这些操作进行编号，减少输入量。这些编号就是指令。
 
@@ -191,7 +191,7 @@
 
 ## 4.2. 运行机制
 
-<p style="text-align:center;"><img src="../../image/os/machanism.png" align="middle" /></p>
+![img](../../image/os/machanism.png)
 
 > - `CPU`通过「程序状态字寄存器（PSW）」 中的标志位，来区分当前在那个状态下：是内核态还是核心态
 > - **特权指令**：随意使用有危险性的指令。为了安全只能用让「内核程序」在「内核态」中使用
@@ -200,7 +200,7 @@
 
 ## 4.3. 内核
 
-<p style="text-align:center;"><img src="../../image/os/os_kernel.png" align="middle" /></p>
+![img](../../image/os/os_kernel.png)
 
 **概念：** 计算机上最底层的「软件」；操作系统最核心的部分。一般包括两大部分：
 - **最根本的部分**：时钟管理（分时系统的根基）、中断处理（系统调用的目的，外部硬件响应）、原语（这部分指令原子性，不能被中断）
@@ -208,7 +208,7 @@
 
 ## 4.4. 内核分类（体系结构）
 
-<p style="text-align:center;"><img src="../../image/os/kernelCategory.png" align="middle" /></p>
+![img](../../image/os/kernelCategory.png)
 
 - **操作系统体系结构：** 「内核」设计理念的不同，也决定了操作系统的体系结构的不同。
 - **大内核**：操作系统的主要功能，都放到了内核中，都在「内核态」中进行执行。
@@ -233,7 +233,7 @@
 
 # 5. 中断
 
-<p style="text-align:center;"><img src="../../image/os/summary5.png" align="middle" /></p>
+![img](../../image/os/summary5.png)
 
 ## 5.1. 中断的概念
 
@@ -256,15 +256,15 @@
 ## 5.2. 中断分类
 
 **分类一**：
-<p style="text-align:center;"><img src="../../image/os/interruptCategory.png" align="middle" /></p>
+![img](../../image/os/interruptCategory.png)
 
 **分类二**：
 
-<p style="text-align:center;"><img src="../../image/os/interruptCategory2.png" align="middle" /></p>
+![img](../../image/os/interruptCategory2.png)
 
 ## 5.3. 中断过程
 
-<p style="text-align:center;"><img src="../../image/os/interrupt.png" align="middle" /></p>
+![img](../../image/os/interrupt.png)
 
 1. `CPU`在执行一条指令后，会检测是否有「外部中断」。「内部中断」不用检测，指令本身发生了中断。
 1. 有外部中断，则备份当前进程的环境（寄存器，程序计数器PC（下个指令的位置）等）
@@ -273,7 +273,7 @@
 
 # 6. 系统调用
 
-<p style="text-align:center;"><img src="../../image/os/summary6.png" align="middle" /></p>
+![img](../../image/os/summary6.png)
 
 ## 6.1. 介绍
 
@@ -282,14 +282,14 @@
 **作用：** 由于操作系统对各种共享资源进行了统一管理，凡是与资源相关的操作（储存，`I/O`操作，文件管理等），都必须通过「系统调用」来向操作系统请求相关服务。这就保证的系统的稳定性与安全性，防止用户的非法操作。
 
 
-<p style="text-align:center;"><img src="../../image/os/callOSCategory.png" align="middle" /></p>
+![img](../../image/os/callOSCategory.png)
 
 > [!note|style:flat]
 > 从分类可以看出，「系统调用」提供的服务都涉及「特权指令」，因此，这些操作的处理程序都必须要要在「内核态」下进行完成。
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 运行机制</span>
 
-<p style="text-align:center;"><img src="../../image/os/theSystemCalls.png" align="middle" /></p>
+![img](../../image/os/theSystemCalls.png)
 
 > [!note]
 > 「系统调用」的本质就是利用`int 中断函数地址`来触发「中断」，进入「内核态」，靠「内核」中的中断程序进行相关中断处理。
@@ -300,7 +300,7 @@
 
 ## 6.2. 系统调用与函数库
 
-<p style="text-align:center;"><img src="../../image/os/oscell_library.png" align="middle" /></p>
+![img](../../image/os/oscell_library.png)
 
 
 - 函数库会对系统调用进行一层封装，方便编程使用。
