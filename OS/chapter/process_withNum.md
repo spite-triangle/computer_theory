@@ -73,7 +73,7 @@ struct task_struct {
 
 <center>
 
-![process states](/image/os/process_states.png)
+![process states](../../image/os/process_states.png)
 
 </center>
 

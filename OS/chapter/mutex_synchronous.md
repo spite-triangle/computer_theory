@@ -313,7 +313,7 @@ V(s);
 
 ### 记录型信号量实现互斥
 
-> [!tip]
+> [!tip|style:flat]
 > **实现思路**：
 > 1. 互斥信号量的初始值：`mutex.value = 1`，<span style="color:red;font-weight:bold"> 初始为解锁状态 </span>；
 > 2. 临界区加锁：`P(mutex)`；
@@ -327,7 +327,7 @@ V(s);
 
 ### 记录型信号量实现同步
 
-> [!tip]
+> [!tip|style:flat]
 > **实现思路：同步的目的是实现「一前一后事件（而非具体的进程 ）」的执行顺序。**
 > 1. 同步信号量的初始值：`s.value = 0`，<span style="color:red;font-weight:bold"> 初始为加锁状态 </span>；
 > 2. 前者执行后：`V(s)`；
