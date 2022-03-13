@@ -3,7 +3,7 @@
 # 1. 基础概念
 
 
-<p style="text-align:center;"><img src="../../image/internet/internet.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/internet.jpg" width="50%" align="middle" /></p>
 
 > [!note|style:flat]
 > 数据链路层的作用：实现链路两端结点的数据报安全、可靠的传输（发送内容与接收内容一致）。
@@ -26,7 +26,7 @@
 
 ## 2.1. 概念
 
-<p style="text-align:center;"><img src="../../image/internet/dataFrame.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/dataFrame.jpg" width="50%" align="middle" /></p>
 
 - **封装成帧：** 在一段数据的前后添加「首部」与「尾部」标记，构成一个帧。
 - **帧定界：** 真正用于划分帧界限的标志符号。**帧的首部与尾部还存放的有其他控制信息。**
@@ -37,28 +37,28 @@
 
 ### 2.2.1. 字符计数法
 
-<p style="text-align:center;"><img src="../../image/internet/charCount_frame.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/charCount_frame.jpg" width="75%" align="middle" /></p>
 
 - **思路：** 每个「帧」的第一个「字段」用来计数当前帧的「字符数」
 - **缺点：** 「计数字段」出错，会导致「帧同步」失败
 
 ### 2.2.2. 字符填充法
 
-<p style="text-align:center;"><img src="../../image/internet/charFill_frame.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/charFill_frame.jpg" width="75%" align="middle" /></p>
 
 - **思路：** 用一段特定的比特组合来表示「帧定界」；对于帧内部的出现的「帧定界」则使用「转义字符」来标记。
 - **缺点：** 实现太复杂
 
 ### 2.2.3. 零比特填充法
 
-<p style="text-align:center;"><img src="../../image/internet/zero_frame.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/zero_frame.jpg" width="75%" align="middle" /></p>
 
 
 - **思路：** 使用`01111110`来表示「帧定界」；帧内部则遇到`5`个连续的`1`就插入一个`0`，例如 `0011111101` 转换为 `00111110101`
 
 ### 2.2.4. 违规编码法
 
-<p style="text-align:center;"><img src="../../image/internet/manchester.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/manchester.jpg" width="75%" align="middle" /></p>
 
 - **思路：** 对于「曼彻斯特」编码方式，是利用「高-低」与「低-高」来表示二进制的，这样就能采用「高-高」与「低-低」来表示「帧定界」
 
@@ -97,7 +97,7 @@
 
 ### 3.2.2. CRC冗余码
 
-<p style="text-align:center;"><img src="../../image/internet/crc.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/crc.jpg" width="75%" align="middle" /></p>
 
 **冗余编码流程：**
 
@@ -105,7 +105,7 @@
 2. 计算冗余个数：$多项式长度 - 1$ ，即多项式最高位转十进制时，`2`的幂次。例如 `10011`的阶数为 `4`
 3. 加冗余`0`：`1101 0110 11 0000`
 4. 模`2`除法：最后的冗余码为 `1110`
-    <p style="text-align:center;"><img src="../../image/internet/mode2.jpg" width="50%" align="middle" /></p>
+    <p style="text-align:center;"><img src="image/internet/mode2.jpg" width="50%" align="middle" /></p>
 5. 替换掉之前的`0`，冗余编码：`1101 0110 11 1110`
 
 > [!note|style:flat]
@@ -131,7 +131,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 确定校验码与数据的位置</span>
 
-<p style="text-align:center;"><img src="../../image/internet/check_data.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/check_data.jpg" width="75%" align="middle" /></p>
 
 - 数据位： 对比特串从`1`开始编号，到 $r + k$ 终止
 - $P_i$ 校验码：数据位的二进制的形式为`1`、`10`、`100`、`1000`等形式
@@ -140,7 +140,7 @@ $$
 <span style="font-size:24px;font-weight:bold" class="section2">3. 计算校验码</span>
  
 
-<p style="text-align:center;"><img src="../../image/internet/check_P.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/check_P.jpg" width="75%" align="middle" /></p>
 
 将所有 $D_i$ 数据位 与 $P_i$ 的数据位进行与运算，满足 $index(D_i) \ \& \ index(P_i) == index(P_i)$ 的「实际值」同 $P_i$ 进行「异或」运算结果为`0`。
 
@@ -160,12 +160,12 @@ $$
 
 计算所有的 $P_i$ 就为
 
-<p style="text-align:center;"><img src="../../image/internet/HammingCode.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/HammingCode.jpg" width="75%" align="middle" /></p>
 
 
 <span style="font-size:24px;font-weight:bold" class="section2">4. 纠错</span>
 
-<p style="text-align:center;"><img src="../../image/internet/HammingError.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/HammingError.jpg" width="75%" align="middle" /></p>
 
 假设 $D_2$ 传输错误：
 
@@ -191,13 +191,13 @@ $$
 - **滑动窗口：** 蓝色窗口内的「帧」才能参与收发操作；当收发成功时，蓝色窗口会向右移动。**滑动窗口能解决「流量控制」与「可靠传输」两个问题**
 
 
-<p style="text-align:center;"><img src="../../image/internet/slideWindow.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/slideWindow.jpg" width="75%" align="middle" /></p>
 
 - **信道利用率：** 一个发送周期内，发送数据所用时间占发送周期的比率。
 
-<p style="text-align:center;"><img src="../../image/internet/channelUsage.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/channelUsage.jpg" width="75%" align="middle" /></p>
 
-<p style="text-align:center;"><img src="../../image/internet/channelUsage1.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/channelUsage1.jpg" width="75%" align="middle" /></p>
 
 > [!tip|style:flat]
 > - **链路层流量控制：** 点对点；接收不了不回复确认。
@@ -224,7 +224,7 @@ $$
 <span style="font-size:24px;font-weight:bold" class="section2">1. 无差错</span>
 
 
-<p style="text-align:center;"><img src="../../image/internet/stopWait_right.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/stopWait_right.jpg" width="50%" align="middle" /></p>
 
 
 - **发送方：** 发送一「帧」，然后一直等待「接收方」的确认信号
@@ -233,7 +233,7 @@ $$
 <span style="font-size:24px;font-weight:bold" class="section2">2. 帧丢失</span>
 
 
-<p style="text-align:center;"><img src="../../image/internet/stopWait_lostFrame.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/stopWait_lostFrame.jpg" width="50%" align="middle" /></p>
 
 - **发送方：** 对发送的「帧」超时重传。
   - **计时：** 对每一个发送的「帧」计时，判断发送时间是否超过了一个`RTT`。
@@ -246,14 +246,14 @@ $$
 <span style="font-size:24px;font-weight:bold" class="section2">3. ACK丢失</span>
 
 
-<p style="text-align:center;"><img src="../../image/internet/stopWait_lostACK.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/stopWait_lostACK.jpg" width="50%" align="middle" /></p>
 
 - **发送方：** 等不到`ACK`就「超时重传」
 - **接收方：** 发送方超时重传后，导致「帧重复」，丢到原来的帧，重新发送`ACK`
 
 <span style="font-size:24px;font-weight:bold" class="section2">4. ACK迟到</span>
 
-<p style="text-align:center;"><img src="../../image/internet/stopWait_delayACK.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/stopWait_delayACK.jpg" width="50%" align="middle" /></p>
 
 - **发送方：** 等不到`ACK`就超时重传；等待到了延迟的`ACK`，与当前的帧编号对比，不一样就丢弃。
 - **发送方：** 「帧重复」，丢到原来的帧，重新发送`ACK`
@@ -262,7 +262,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">1. 无差错</span>
 
-<p style="text-align:center;"><img src="../../image/internet/base_GBN.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/base_GBN.jpg" width="75%" align="middle" /></p>
 
 
 1. 滑动窗口内的「帧」可以发送
@@ -278,7 +278,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 出错</span>
 
-<p style="text-align:center;"><img src="../../image/internet/error_GBN.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/error_GBN.jpg" width="75%" align="middle" /></p>
 
 
 - **超时重传：** 当发生超时事件时，发送方会重新发送所有已发送但是却未被确认的帧
@@ -300,7 +300,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">1. 无差错</span>
 
-<p style="text-align:center;"><img src="../../image/internet/base_SR.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/base_SR.jpg" width="75%" align="middle" /></p>
 
 - **接收方：** 接收端的「滑动窗口」个数增加，当最左边「帧」接收成功后，才向右方滑动
 - **`ACK`确认：** 确认信号只确认对应「帧」接收成功，不在是累计确认
@@ -310,7 +310,7 @@ $$
 
 
 
-<p style="text-align:center;"><img src="../../image/internet/error_SR.jpg" width="100%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/error_SR.jpg" width="100%" align="middle" /></p>
 
 
 - **接收方：** 接收到已经接收到的「帧」时，返回该帧的`ACK`，其他情况则丢弃帧
@@ -333,7 +333,7 @@ $$
 
 **介质访问控制：** 采取一定措施，使得两个结点之间的「物理通信」不会相互干扰。 
 
-<p style="text-align:center;"><img src="../../image/internet/channelControl.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/channelControl.jpg" width="75%" align="middle" /></p>
 
 
 ## 5.2. 信道划分访问控制
@@ -341,7 +341,7 @@ $$
 ### 5.2.1. 多路复用
 
 
-<p style="text-align:center;"><img src="../../image/internet/channelShare.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/channelShare.jpg" width="75%" align="middle" /></p>
 
 - **多路复用：** 把多组信号进行组合，在同一条「链路」上进行信号传输，即共享信道。结果上就是将「广播信道」在逻辑上修改为「点对点信道」。
 
@@ -349,7 +349,7 @@ $$
 
 ### 5.2.2. 频分多路复用FDM
 
-<p style="text-align:center;"><img src="../../image/internet/FDM.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/FDM.jpg" width="50%" align="middle" /></p>
 
 - **思路：** 信道上的每个用户占用不同的频率带宽。 
 - **特点：** 充分利用介质带宽，系统效率高，实现容易
@@ -357,7 +357,7 @@ $$
 
 ### 5.2.3. 时分多路复用TDM
 
-<p style="text-align:center;"><img src="../../image/internet/TDM.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/TDM.jpg" width="50%" align="middle" /></p>
 
 
 - **思路：** 每一个用户在一个「TDM帧」中占有一个「固定时间间隙」，用户只能在自己的时隙里使用信道。
@@ -367,7 +367,7 @@ $$
 
 ### 5.2.4. 统计时分复用STDM
 
-<p style="text-align:center;"><img src="../../image/internet/STDM.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/STDM.jpg" width="75%" align="middle" /></p>
 
 
 - **思路：** 为了克服TDM中，信道利用空闲的问题，利用「集中器」将用户的「传输时隙」整合起来，然后通过「STDM帧」进行发送。<span style="color:red;font-weight:bold"> 按需动态分配时隙 </span>
@@ -375,7 +375,7 @@ $$
 
 ### 5.2.5. 波分多路复用WDM
 
-<p style="text-align:center;"><img src="../../image/internet/WDM.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/WDM.jpg" width="75%" align="middle" /></p>
 
 - **思路：** 类似「频分复用」，即光纤传输时，对光波范围的划分。
 
@@ -444,7 +444,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">1. 纯ALOHA</span>
 
-<p style="text-align:center;"><img src="../../image/internet/pureALOHA.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/pureALOHA.jpg" width="75%" align="middle" /></p>
 
 - **思想：** 不监听信道，不按照时间槽（时隙）发送，随机重发，想法就发。
 - $T_0$：从「发送站点」发送第一个比特开始，到「接收站点」接收到最后一个比特结束，所使用的时间。**ALOHA假定 $T_0$ 为定值。**
@@ -454,7 +454,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 时隙ALOHA</span>
 
-<p style="text-align:center;"><img src="../../image/internet/intervalALOHA.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/intervalALOHA.jpg" width="75%" align="middle" /></p>
 
 **思想：** 把时间拆分为若干的「时间片」，每次数据发送只能在「时间片」的开始；当发生冲突时，「发送站点」只能在下一个「时间片」的开始进行「重发」。
 
@@ -515,11 +515,11 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 信号碰撞</span>
 
-<p style="text-align:center;"><img src="../../image/internet/transferInfluence.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/transferInfluence.jpg" width="75%" align="middle" /></p>
 
 - **原因：** 信号在信道上传播是存在传播时延的，这会导致「载波监听」的误判：**载波监听只能监听信号进入站点的「电压摆动」，还在信道上传播的信号检测不到。**
 
-<p style="text-align:center;"><img src="../../image/internet/conflict.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/conflict.jpg" width="50%" align="middle" /></p>
 
 - **碰撞：** 两个信号波形叠加，导致信号出错。
   - $\tau$ ：单程的传播时延
@@ -572,14 +572,14 @@ $$
 
 ### 5.4.1. 轮询协议
 
-<p style="text-align:center;"><img src="../../image/internet/loopAsk.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/loopAsk.jpg" width="50%" align="middle" /></p>
 
 - **思路：** 「主节点」负责数据的发送，并由「主结点」循环邀请「从属结点」进行数据发送
 - **特点：** 一次只有一台主机发送数据，无冲突，信道带宽沾满；轮询有开销；存在延迟；单点故障，主机完蛋，从属无法发送。
 
 ### 5.4.2. 令牌传递协议
 
-<p style="text-align:center;"><img src="../../image/internet/wand.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/wand.jpg" width="50%" align="middle" /></p>
 
 
 - **令牌：** 一个特殊格式的`MAC`控制帧。用于控制信号，确保同一时刻只有一个站点独占信道。 
@@ -601,14 +601,14 @@ $$
   3. 误码率低，延迟短
   4. 共享传输信道
 - **网络拓扑**
-  <p style="text-align:center;"><img src="../../image/internet/LAN_network.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/LAN_network.jpg" width="75%" align="middle" /></p>
 
 - **分类**
-  <p style="text-align:center;"><img src="../../image/internet/categories.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/categories.jpg" width="75%" align="middle" /></p>
 
 - **IEEE 802 协议** ：局域网、城域网的技术标准，规定了令牌环网、以太网、wifi等网络的协议标准。该协议描述的「局域网」模型对应OSI参考模型的「数据链路层」与「物理层」，并将「数据链路层」划分为「逻辑链路层LLC」与「介质访问控制MAC」
 
-<p style="text-align:center;"><img src="../../image/internet/IEEE802.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/IEEE802.jpg" width="75%" align="middle" /></p>
 
 ## 6.2. 以太网
 
@@ -632,7 +632,7 @@ $$
   - **数据最短长度 46B ：** 由于以太网的规定的「最小帧长度」（CSMA/CD 需要限制最小长度）为 `64B`，即 `64 - 6 - 6 - 2 - 4 = 46`
   - **FCS：** CRC循环的冗余码
   - **帧定界：** 编码为「曼彻斯特编码」，所以采用「违规编码法」
-  <p style="text-align:center;"><img src="../../image/internet/MAC_frame.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/MAC_frame.jpg" width="75%" align="middle" /></p>
 
 
 ## 6.3. 无线局域网
@@ -640,15 +640,15 @@ $$
 - **IEEE 802 无线局域网：** 通用标准为 `IEEE 802.11`，其中`IEEE 802.11b`与`IEEE 802.11g`为`WIFI`。
 - **无线接入点（AP）：** 接收与发送无线信号的基站。「终端」收发数据，均通过「基站」进行转发。
 - **MAC帧头：**
-  <p style="text-align:center;"><img src="../../image/internet/MAC_frameHead.jpg" width="75%" align="middle" /></p>
-  <p style="text-align:center;"><img src="../../image/internet/MAC_frameHeadAddress.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/MAC_frameHead.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/MAC_frameHeadAddress.jpg" width="75%" align="middle" /></p>
 
 - **固定基础设施无线局域网：**
 
-  <p style="text-align:center;"><img src="../../image/internet/WireLess_LAN.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/WireLess_LAN.jpg" width="75%" align="middle" /></p>
 
 - **无固定基础设施无线局域网：** 没有基站、路由器、集线器等；各个站点自主收发信号。
-  <p style="text-align:center;"><img src="../../image/internet/self-organize.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/self-organize.jpg" width="75%" align="middle" /></p>
 
 # 7. 广域网
 
@@ -665,21 +665,21 @@ $$
 </center>
 
 - **广域网：** 跨度很大的物理范围，主要采用「分组交换」的技术，将不同地区的「局域网」连接起来，实现「资源共享」，例如因特网（Internet）。
-  <p style="text-align:center;"><img src="../../image/internet/WAN.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/WAN.jpg" width="75%" align="middle" /></p>
 
 ## 7.2. PPP协议
 
 - **定义：** 点对点协议，用于「广域网」的「链路层」协议。
 
 - **要点：** **无流量控制、无帧序号、不支持多点线路（只能一端到另一端）**
-  <p style="text-align:center;"><img src="../../image/internet/ppp_requestion.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/ppp_requestion.jpg" width="75%" align="middle" /></p>
 
 - **PPP协议工作原理：**
-  <p style="text-align:center;"><img src="../../image/internet/ppp.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/ppp.jpg" width="75%" align="middle" /></p>
 
 - **PPP协议帧：**
 
-  <p style="text-align:center;"><img src="../../image/internet/ppp_frame.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/ppp_frame.jpg" width="75%" align="middle" /></p>
 
 
 
@@ -688,14 +688,14 @@ $$
 ## 8.1. 扩展以太网
 
 - **光纤：** 扩大以太网传输距离
-  <p style="text-align:center;"><img src="../../image/internet/opticalFiber_extend.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/opticalFiber_extend.jpg" width="75%" align="middle" /></p>
 
 - **叠加集线器：**
   - **冲突域：** 在这个区域中，同时只能有一台主机发送数据
-  <p style="text-align:center;"><img src="../../image/internet/concentrator_extend.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/concentrator_extend.jpg" width="75%" align="middle" /></p>
 
 - **网桥：** 通过「网桥」将多个「冲突域」连接起来。<span style="color:red;font-weight:bold"> 「集线器」会扩大冲突域，「网桥」则可以限制冲突域 </span>
-  <p style="text-align:center;"><img src="../../image/internet/brigde.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/brigde.jpg" width="75%" align="middle" /></p>
 
 
 ## 8.2. 网桥/交换机
@@ -710,13 +710,13 @@ $$
 - **冲突域：** 在这个区域中，同时只能有一台主机发送数据。每一个站点都是收到同一「冲突域」中的其他站点的「广播帧」。
 - **广播域：** 「广播帧」能够发送的最大范围。
 
-<p style="text-align:center;"><img src="../../image/internet/conflict_broadcast.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="image/internet/conflict_broadcast.jpg" width="75%" align="middle" /></p>
 
 ### 8.2.2. 透明网桥
 
 - **定义：** 以太网上的站点，并不知到所发的帧会通过哪些网桥，「网桥」对于「站点」不可见。
 
-  <p style="text-align:center;"><img src="../../image/internet/brigde_selfLearn.jpg" width="75%" align="middle" /></p>
+  <p style="text-align:center;"><img src="image/internet/brigde_selfLearn.jpg" width="75%" align="middle" /></p>
 
 - **工作原理：**
   1. 每个「网桥」会维护一个「转发表」
