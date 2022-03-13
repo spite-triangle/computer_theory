@@ -213,7 +213,7 @@ $$
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 同轴电缆</span>
 
-<p style="text-align:center;"><img src="../../image/internet/cable.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="../../image/internet/cable.jpg" width="50%" align="middle" /></p>
 
 <span style="font-size:24px;font-weight:bold" class="section2">3. 光纤</span>
 
@@ -238,7 +238,7 @@ $$
 
 ## 集线器
 
-<p style="text-align:center;"><img src="../../image/internet/concentrator.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="../../image/internet/concentrator.jpg" width="50%" align="middle" /></p>
 
 - **集线器：** 多接口的「中继器」，但信号发送为「广播方式」，**集线器会将信号通过所有的端口广播出去，且一次只能广播一组信号**。
 
