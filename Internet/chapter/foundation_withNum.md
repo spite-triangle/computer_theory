@@ -2,7 +2,7 @@
 
 # 1. 计算机网络
 
-<p style="text-align:center;"><img src="image/internet/summary1.jpg" width="100%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/summary1.jpg" width="100%" align="middle" /></p>
 
 ## 1.1. 概念
 
@@ -25,7 +25,7 @@
 
 <span style="font-size:24px;font-weight:bold" class="section2">1. 组成部分</span>
 
-<p style="text-align:center;"><img src="image/internet/structure.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/structure.jpg" width="75%" align="middle" /></p>
 
 1. 硬件
 2. 软件
@@ -33,7 +33,7 @@
 
 <span style="font-size:24px;font-weight:bold" class="section2">2. 工作方式</span>
 
-<p style="text-align:center;"><img src="image/internet/workWay.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/workWay.jpg" width="75%" align="middle" /></p>
 
 - **边缘部分：** 供用户使用，例如C/S，P2P
 - **核心部分：** 网络内部组成
@@ -41,7 +41,7 @@
 <span style="font-size:24px;font-weight:bold" class="section2">3. 功能组成</span>
 
 
-<p style="text-align:center;"><img src="image/internet/compose.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/compose.jpg" width="75%" align="middle" /></p>
 
 - **资源子网：** 实现数据共享，数据处理
 - **通讯子网：** 实现数据通讯
@@ -72,7 +72,7 @@
 
 <span style="font-size:24px;font-weight:bold" class="section2">4. 拓扑结构</span>
 
-<p style="text-align:center;"><img src="image/internet/topology.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/topology.jpg" width="75%" align="middle" /></p>
 
 <span style="font-size:24px;font-weight:bold" class="section2">5. 传输技术</span>
 
@@ -88,11 +88,11 @@
 
 ## 2.2. 标准建立（RFC）
 
-<p style="text-align:center;"><img src="image/internet/RFC.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/RFC.jpg" width="75%" align="middle" /></p>
 
 ## 2.3. 标准组织
 
-<p style="text-align:center;"><img src="image/internet/organization.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/organization.jpg" width="75%" align="middle" /></p>
 
 
 # 3. 计算机网络指标
@@ -120,13 +120,13 @@ $$
 
 **「带宽」描述的是网络设备所支持的最高数据传输速率；「线路」的「信号传输速度」由线路材料所确定，是一个定值。**
 
-<p style="text-align:center;"><img src="image/internet/bandwidth.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/bandwidth.jpg" width="75%" align="middle" /></p>
 
 <span style="font-size:24px;font-weight:bold" class="section2">3. 吞吐量</span>
 
 **定义：** 单位时间内通过某个网络（信道，接口）的数据量，单位`b/s`，即一段时间内，通过某个网络的速率的总和。
 
-<p style="text-align:center;"><img src="image/internet/throughput.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/throughput.jpg" width="75%" align="middle" /></p>
 
 ## 3.2. 时间相关
 
@@ -134,7 +134,7 @@ $$
 
 **定义：** 从一端传输到另一端所需要的时间，单位`s`
 
-<p style="text-align:center;"><img src="image/internet/delay.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/delay.jpg" width="75%" align="middle" /></p>
 
 - **发送时延：** 数据从第一个比特到最后一个比特，发送所使用的时间。
 - **传播时延：** 数据在信道（链路）上，所消耗的时间
@@ -145,7 +145,7 @@ $$
 
 **定义：** 「传播时延」与「带宽」的乘积，单位`bit`。描述的是链路能存储的最大比特数，容量的大小。「带宽」则可以看作是设备发出数据的最大速率。
 
-<p style="text-align:center;"><img src="image/internet/channelLen.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/channelLen.jpg" width="75%" align="middle" /></p>
 
 <span style="font-size:24px;font-weight:bold" class="section2">3. 往返时延RTT</span>
 
@@ -156,7 +156,7 @@ $$
 - **信道利用率：** $\frac{有数据通过时间}{总时间}$
 - **网络利用率：** 信道利用率的加权平均
 
-<p style="text-align:center;"><img src="image/internet/delay_usage.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/delay_usage.jpg" width="50%" align="middle" /></p>
 
 > [!tip]
 > 同一个路由器下，一台主机满信道利用率运行，另外一台主机就得等着利用信道，所以另外一台主机网络卡了（时延高了）。
@@ -166,7 +166,7 @@ $$
 
 ## 4.1. 基本概念
 
-<p style="text-align:center;"><img src="image/internet/InternetModel.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/InternetModel.jpg" width="75%" align="middle" /></p>
 
 - **分层的基本原则：** 按照功能进行结构划分的
    1. 各层之间相互独立，每层只实现一种相对独立的功能。
@@ -188,7 +188,7 @@ $$
 
 ### 4.2.1. 通信过程
 
-<p style="text-align:center;"><img src="image/internet/OSI_model.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/OSI_model.jpg" width="75%" align="middle" /></p>
 
 1. 接收终端与发送终端都都是七层的，中间系统为三层模型
 2. 上四层只有终端有，属于「端对端」通信
@@ -199,9 +199,9 @@ $$
 
 ### 4.2.2. 数据传输
 
-<p style="text-align:center;"><img src="image/internet/dataTransfer.jpg" width="100%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/dataTransfer.jpg" width="100%" align="middle" /></p>
 
-<p style="text-align:center;"><img src="image/internet/dataRelation.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/dataRelation.jpg" width="50%" align="middle" /></p>
 
 - **数据结构：**
     1. **PCI：** 协议控制信息，控制协议操作的信息
@@ -229,18 +229,18 @@ $$
 
 ## 4.3. TCP/IP模型
 
-<p style="text-align:center;"><img src="image/internet/tcpIp_model.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/tcpIp_model.jpg" width="75%" align="middle" /></p>
 
-<p style="text-align:center;"><img src="image/internet/different_tcpip_osi.jpg" width="50%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/different_tcpip_osi.jpg" width="50%" align="middle" /></p>
 
 - **面向连续：** 请求连接；连接通信；断开连接。例如 `TCP`
 - **无连接：** 直接数据通信。例如 `UDP`
 
 ## 4.4. 五层模型
 
-<p style="text-align:center;"><img src="image/internet/five_model.jpg" width="75%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/five_model.jpg" width="75%" align="middle" /></p>
 
-<p style="text-align:center;"><img src="image/internet/dataTransfer5.jpg" width="100%" align="middle" /></p>
+<p style="text-align:center;"><img src="/computer_theory/image/internet/dataTransfer5.jpg" width="100%" align="middle" /></p>
 
 
 
