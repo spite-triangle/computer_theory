@@ -10,8 +10,9 @@
     --cover-button-primary-color: rgb(255, 255, 255);
     --cover-button-primary-background: black;
     --cover-heading-color: black;
-    --blockquote-border-color:#e671ee;
-    --code-inline-color:rgb(201, 114, 57);
+    --code-inline-color:rgb(133, 52, 135);
+    --blockquote-border-color:#0b87da;
+    --theme-color: #0b87da;
 }
 
 .cover .cover-main>p:last-child a:hover {
