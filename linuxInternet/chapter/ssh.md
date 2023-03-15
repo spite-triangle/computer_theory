@@ -110,3 +110,45 @@ PermitRootLogin no
 PasswordAuthentication no
 triangle@LEARN:~$ systemctl restart sshd // 重启服务，让配置文件生效
 ```
+
+# 文件拷贝
+
+## scp
+
+```term
+triangle@LEARN:~$ scp user@host: src/  dest/ // 远程下载
+triangle@LEARN:~$ scp src/  user@host: dest/ // 本地上传
+```
+
+常用选项
+
+```bash
+-r 拷贝文件夹
+-p 保留文件权限信息
+-P 指定端口号
+```
+
+>[!tip]
+> scp 是直接全部拷贝，不会校验文件有没有修改，因此不会对没改变的文件进行过滤。
+
+## rsync
+
+```term
+triangle@LEARN:~$ rsync user@host: src/  dest/ // 远程下载
+triangle@LEARN:~$ rsync src/  user@host: dest/ // 本地上传，上传 src 文件夹下的内容
+triangle@LEARN:~$ rsync src  user@host: dest/ // 本地上传，上传 src 与 src 文件夹下的内容
+triangle@LEARN:~$ rsync src/  user@host:: dest/ // “:” 采用 ssh 协议，“::” 采用 rsync 的协议
+```
+
+常用选项
+
+```bash
+-v 显示过程
+-r 递归拷贝
+-p 保留文件权限信息
+-L 软链接指向的文件也拷贝
+-l 软链接文件拷贝
+-u 目标路径的文件比源路径的文件新，就忽略同步
+--delete 源路径删除的文件，目标路径也同步删除
+```
+

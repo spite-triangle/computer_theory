@@ -1,5 +1,5 @@
 
-<h1 style="text-align:center;font-size:60px;font-weight:bold">Linux 服务</h1>
+<h1 style="text-align:center;font-size:60px;font-weight:bold">Linux 指令</h1>
 
 <style>
     #btn{
