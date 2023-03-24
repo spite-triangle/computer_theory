@@ -8,3 +8,4 @@
 
 - [第一章 Bash](./LinuxCommand/chapter/Bash.md)
 - [第二章 三剑客](./LinuxCommand/chapter/Regular.md)
+- [第三章 GDB](./LinuxCommand/chapter/gdb.md)
